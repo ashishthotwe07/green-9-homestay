@@ -1,0 +1,6 @@
+@import "tailwindcss";
+@import "flowbite-react/plugin/tailwindcss";
+
+html {
+    scroll-behavior: smooth;
+}
