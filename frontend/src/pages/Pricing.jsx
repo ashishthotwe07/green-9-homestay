@@ -3,23 +3,23 @@ import { Clock, Users, Coffee } from "lucide-react";
 export default function Pricing() {
     const packages = [
         {
-            title: "8 Hours Stay",
-            price: "₹1500",
-            extra: "Extra Guest Charges Applicable (1 Person)",
+            title: "8-Hours Stay",
+            price: "₹ 1500",
+
             breakfast: false,
             highlight: false,
         },
         {
-            title: "12 Hours Stay",
-            price: "₹2200",
-            extra: "Extra Guest Charges Applicable (1 Person)",
+            title: "12-Hours Stay",
+            price: "₹ 2000",
+
             breakfast: false,
             highlight: true,
         },
         {
-            title: "22 Hours Stay",
-            price: "₹3000",
-            extra: "Extra Guest Charges Applicable (1 Person)",
+            title: "22-Hours Stay",
+            price: "₹ 2800",
+
             breakfast: true,
             highlight: false,
         },
@@ -38,7 +38,7 @@ export default function Pricing() {
                 </h2>
 
                 <p className="text-gray-500 mb-16 text-lg">
-                    Flexible stay duration plans at Green9 Homestay near Kesnand Road, Wagholi.
+                    Flexible stay duration plans available at Green9 Homestay near Kesnand Road, Wagholi.
                 </p>
 
                 <div className="grid md:grid-cols-3 gap-10">

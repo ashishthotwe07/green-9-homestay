@@ -26,7 +26,7 @@ export default function Amenities() {
                 </h2>
 
                 <p className="text-gray-500 mb-14 text-lg">
-                    Essential services designed for a comfortable and convenient stay
+                    Essential services designed for a comfortable and convenient stay.
                 </p>
 
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-10">

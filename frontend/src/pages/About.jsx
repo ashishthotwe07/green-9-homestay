@@ -32,9 +32,9 @@ export default function About() {
                     </h2>
 
                     <p className="text-gray-600 mb-8 text-lg leading-relaxed">
-                        Green9 Homestay offers a comfortable and peaceful stay in Wagholi, Pune,
-                        ideal for couples, families, and professionals looking for AC rooms,
-                        privacy, and a reliable accommodation near Kesnand Road.
+                        Green9 Homestay offers a comfortable and peaceful stay in Wagholi, Pune.
+                        It is ideal for couples, families, and professionals looking for AC rooms,
+                        privacy, and reliable accommodation near Kesnand Road.
                     </p>
 
                     {/* Highlight Boxes */}

@@ -6,12 +6,13 @@ export default function Restaurant() {
                 {/* Heading */}
                 <div className="text-center mb-10">
                     <h2 className="text-3xl md:text-5xl font-bold mb-4 text-gray-800">
-                        Dining at Green9
+                        Dining at Green9 Restaurant & Bar
+
                     </h2>
 
                     <p className="text-gray-500 text-base md:text-lg max-w-2xl mx-auto">
                         Enjoy multi-cuisine dining, bar service, and a relaxed food experience
-                        as part of your stay at Green9.
+                        as part of your stay at Green9 Stay.
                     </p>
                 </div>
 
@@ -22,16 +23,13 @@ export default function Restaurant() {
 
                         <p className="text-gray-700 leading-relaxed mb-6">
                             Freshly prepared meals, comfortable seating, and a calm ambience make
-                            Green9 a convenient dining option for guests, families, and visitors.
+                            Green9 Restaurant & Bar a convenient dining option for guests, families, and visitors.
                         </p>
 
                         {/* Modern Feature Tags */}
                         <div className="flex flex-wrap gap-3 mb-8">
                             <span className="bg-white shadow-sm px-4 py-2 rounded-full text-sm font-medium text-gray-700 hover:shadow-md transition">
                                 Multi-Cuisine
-                            </span>
-                            <span className="bg-white shadow-sm px-4 py-2 rounded-full text-sm font-medium text-gray-700 hover:shadow-md transition">
-                                Veg & Non-Veg
                             </span>
                             <span className="bg-white shadow-sm px-4 py-2 rounded-full text-sm font-medium text-gray-700 hover:shadow-md transition">
                                 Bar Available
@@ -83,7 +81,7 @@ export default function Restaurant() {
 
                         {/* Premium overlay label */}
                         <div className="absolute bottom-4 left-4 bg-black/60 text-white text-sm px-4 py-2 rounded-lg backdrop-blur">
-                            In-house Dining • Bar • Multi-Cuisine
+                            In-house Multi-Cuisine Restaurant & Bar
                         </div>
                     </div>
 

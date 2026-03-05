@@ -1,142 +1,153 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Phone, Menu, X } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 
 export default function Navbar() {
+
     const [menuOpen, setMenuOpen] = useState(false);
+    const navbarRef = useRef(null);
 
     const scrollToSection = (id) => {
-        const el = document.getElementById(id);
-        if (el) {
-            const navbarHeight = 80;
-            const elementPosition = el.getBoundingClientRect().top + window.pageYOffset;
-            const offsetPosition = elementPosition - navbarHeight;
+
+        const element = document.getElementById(id);
+
+        if (element) {
+
+            const navbarHeight = navbarRef.current?.offsetHeight || 80;
+
+            const y =
+                element.offsetTop - navbarHeight;
 
             window.scrollTo({
-                top: offsetPosition,
+                top: y,
                 behavior: "smooth",
             });
         }
+
         setMenuOpen(false);
     };
 
     return (
-        <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
+        <nav
+            ref={navbarRef}
+            className="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100"
+        >
             <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
 
                 {/* Logo */}
-                <button
-                    onClick={() => scrollToSection("home")}
-                    className="flex items-center"
-                >
+                <button onClick={() => scrollToSection("home")}>
                     <img
                         src="/logo.png"
                         alt="Green9 Homestay Wagholi Pune"
-                        className="h-10 md:h-14 w-auto object-contain"
+                        className="h-10 md:h-14"
                     />
                 </button>
 
-                {/* Desktop Menu - Correct order */}
-                <div className="hidden md:flex items-center gap-10 text-gray-700 font-medium">
+                {/* Desktop Menu */}
+                <div className="hidden md:flex items-center gap-10 font-medium text-gray-700">
 
-                    <button onClick={() => scrollToSection("pricing")} className="hover:text-green-700 transition cursor-pointer">
-                        Pricing
+                    <button onClick={() => scrollToSection("home")} className="hover:text-green-700">
+                        Home
                     </button>
 
-                    <button onClick={() => scrollToSection("amenities")} className="hover:text-green-700 transition cursor-pointer">
-                        Amenities
+                    <button onClick={() => scrollToSection("about")} className="hover:text-green-700">
+                        About Us
                     </button>
 
-                    <button onClick={() => scrollToSection("restaurant")} className="hover:text-green-700 transition cursor-pointer">
-                        Dining
-                    </button>
-
-                    <button onClick={() => scrollToSection("gallery")} className="hover:text-green-700 transition cursor-pointer">
+                    <button onClick={() => scrollToSection("gallery")} className="hover:text-green-700">
                         Gallery
                     </button>
 
-                    <button onClick={() => scrollToSection("location")} className="hover:text-green-700 transition cursor-pointer">
-                        Location
+                    <button onClick={() => scrollToSection("amenities")} className="hover:text-green-700">
+                        Amenities
+                    </button>
+
+                    <button onClick={() => scrollToSection("pricing")} className="hover:text-green-700">
+                        Tariff
+                    </button>
+
+                    <button onClick={() => scrollToSection("location")} className="hover:text-green-700">
+                        Contact Us
                     </button>
 
                 </div>
 
-                {/* Right Side */}
-                <div className="flex items-center gap-3">
+                {/* Mobile Icons */}
+                <div className="flex md:hidden items-center gap-3">
 
-                    {/* Mobile Icons */}
-                    <div className="flex md:hidden items-center gap-3">
+                    <a
+                        href="https://wa.me/919325636565"
+                        className="p-2 rounded-full bg-green-600 text-white"
+                    >
+                        <FaWhatsapp size={20} />
+                    </a>
 
-                        <a
-                            href="https://wa.me/919325636565"
-                            className="p-2 rounded-full bg-green-600 text-white"
-                        >
-                            <FaWhatsapp size={20} />
-                        </a>
+                    <a
+                        href="tel:+919325636565"
+                        className="p-2 rounded-full bg-green-50 text-green-700"
+                    >
+                        <Phone size={20} />
+                    </a>
 
-                        <a
-                            href="tel:+919325636565"
-                            className="p-2 rounded-full bg-green-50 text-green-700"
-                        >
-                            <Phone size={20} />
-                        </a>
+                    <button onClick={() => setMenuOpen(!menuOpen)}>
+                        {menuOpen ? <X size={22} /> : <Menu size={22} />}
+                    </button>
 
-                        <button
-                            className="text-gray-700"
-                            onClick={() => setMenuOpen(!menuOpen)}
-                        >
-                            {menuOpen ? <X size={22} /> : <Menu size={22} />}
-                        </button>
-                    </div>
+                </div>
 
-                    {/* Desktop Contact Buttons */}
-                    <div className="hidden md:flex items-center gap-4">
+                {/* Desktop Buttons */}
+                <div className="hidden md:flex gap-4">
 
-                        <a
-                            href="tel:+919325636565"
-                            className="flex items-center justify-center gap-2 px-6 py-2.5 rounded-lg border border-green-600 text-green-700 hover:bg-green-50 transition font-semibold h-11"
-                        >
-                            <Phone size={18} />
-                            +91 9325636565
-                        </a>
+                    <a
+                        href="tel:+919325636565"
+                        className="flex items-center gap-2 px-6 py-2.5 rounded-lg border border-green-600 text-green-700 hover:bg-green-50"
+                    >
+                        <Phone size={18} />
+                        +91 9325636565
+                    </a>
 
-                        <a
-                            href="https://wa.me/919325636565"
-                            className="flex items-center justify-center gap-2 px-6 py-2.5 rounded-lg bg-green-600 text-white hover:bg-green-700 transition font-semibold h-11"
-                        >
-                            <FaWhatsapp size={22} />
-                            WhatsApp
-                        </a>
+                    <a
+                        href="https://wa.me/919325636565"
+                        className="flex items-center gap-2 px-6 py-2.5 rounded-lg bg-green-600 text-white hover:bg-green-700"
+                    >
+                        <FaWhatsapp size={20} />
+                        WhatsApp
+                    </a>
 
-                    </div>
                 </div>
             </div>
 
-            {/* Mobile Dropdown - same order */}
+            {/* Mobile Menu */}
             {menuOpen && (
-                <div className="md:hidden bg-white shadow-md px-6 py-5 space-y-4 border-t border-gray-100">
 
-                    <button onClick={() => scrollToSection("pricing")} className="block text-gray-700">
-                        Pricing
+                <div className="md:hidden bg-white px-6 py-5 space-y-4 border-t">
+
+                    <button onClick={() => scrollToSection("home")} className="block">
+                        Home
                     </button>
 
-                    <button onClick={() => scrollToSection("amenities")} className="block text-gray-700">
-                        Amenities
+                    <button onClick={() => scrollToSection("about")} className="block">
+                        About Us
                     </button>
 
-                    <button onClick={() => scrollToSection("restaurant")} className="block text-gray-700">
-                        Dining
-                    </button>
-
-                    <button onClick={() => scrollToSection("gallery")} className="block text-gray-700">
+                    <button onClick={() => scrollToSection("gallery")} className="block">
                         Gallery
                     </button>
 
-                    <button onClick={() => scrollToSection("location")} className="block text-gray-700">
-                        Location
+                    <button onClick={() => scrollToSection("amenities")} className="block">
+                        Amenities
+                    </button>
+
+                    <button onClick={() => scrollToSection("pricing")} className="block">
+                        Tariff
+                    </button>
+
+                    <button onClick={() => scrollToSection("location")} className="block">
+                        Contact Us
                     </button>
 
                 </div>
+
             )}
         </nav>
     );

@@ -1,10 +1,29 @@
+import { FaWhatsapp } from "react-icons/fa";
+
 export default function Hero() {
+
+    const scrollToPricing = () => {
+        const el = document.getElementById("pricing");
+
+        if (el) {
+            const yOffset = -80; // adjust if you have fixed navbar height
+            const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+            window.scrollTo({
+                top: y,
+                behavior: "smooth"
+            });
+        }
+    };
+
     return (
         <section
+            id="home"
             className="relative h-[80vh] flex items-center justify-center overflow-hidden"
             aria-label="Green9 Homestay in Wagholi Pune hero section"
         >
-            {/* Real image instead of CSS background (fixes LCP) */}
+
+            {/* Background Image */}
             <img
                 src="/hero.webp"
                 alt="Green9 Homestay Wagholi Pune"
@@ -12,7 +31,7 @@ export default function Hero() {
                 fetchpriority="high"
             />
 
-            {/* Gradient Overlay */}
+            {/* Overlay */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70"></div>
 
             {/* Content */}
@@ -25,7 +44,7 @@ export default function Hero() {
 
                 {/* Heading */}
                 <h1
-                    className="text-[24px] sm:text-3xl md:text-5xl lg:text-6xl text-white leading-tight whitespace-nowrap"
+                    className="text-[24px] sm:text-3xl md:text-5xl lg:text-6xl text-white leading-tight"
                     style={{
                         fontFamily: "'Playfair Display', serif",
                         letterSpacing: "0.5px",
@@ -37,29 +56,37 @@ export default function Hero() {
 
                 {/* Subtext */}
                 <p className="mt-6 text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto">
-                    Experience peaceful surroundings, modern comfort, and warm hospitality
+                    Experience peaceful surroundings, modern comforts, and warm hospitality
                     in the heart of Pune. Perfect for families, professionals, and travelers.
-                    <br />
-                    <span className="text-green-300 font-medium">
-                        Reservations via Call or WhatsApp
-                    </span>
                 </p>
-                {/* Button */}
-                <div className="mt-10 flex justify-center">
+
+                {/* Buttons */}
+                <div className="mt-10 flex justify-center gap-4 flex-wrap">
+
+                    {/* Explore Stays */}
                     <button
-                        onClick={() =>
-                            document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })
-                        }
+                        onClick={scrollToPricing}
                         className="flex items-center justify-center gap-2 
-                   bg-white/10 hover:bg-white/20 transition duration-300 
-                   text-white 
-                   px-5 py-2.5 text-sm
-                   md:px-8 md:py-3 md:text-base
-                   rounded-xl font-semibold backdrop-blur-md border border-white/20"
-                        aria-label="Explore stay pricing at Green9 Homestay Wagholi Pune"
+                        bg-white/10 hover:bg-white/20 transition duration-300 
+                        text-white 
+                        px-5 py-2.5 text-sm
+                        md:px-8 md:py-3 md:text-base
+                        rounded-xl font-semibold backdrop-blur-md border border-white/20"
                     >
-                        Explore Stay
+                        Explore Stays
                     </button>
+
+                    {/* WhatsApp Button */}
+                    <a
+                        href="https://wa.me/919325636565"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 bg-green-600 hover:bg-green-700 transition text-white font-semibold px-5 py-2.5 md:px-8 md:py-3 rounded-xl"
+                    >
+                        <FaWhatsapp size={20} />
+                        WhatsApp
+                    </a>
+
                 </div>
 
                 {/* Location */}
