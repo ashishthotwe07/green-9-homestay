@@ -92,7 +92,7 @@ export default function Location() {
                     {/* RIGHT SIDE MAP */}
                     <div className="rounded-3xl overflow-hidden shadow-xl border border-gray-100">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.8914270749174!2d73.99025917496442!3d18.578932982525995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c37ae3f343b5%3A0xe4540451d3df3ebf!2sGreen9%20Restaurant!5e0!3m2!1sen!2sin!4v1771911625803!5m2!1sen!2sin"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3594.762241929499!2d73.9929226!3d18.5791392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c38a3e4169d7%3A0xb59a741dbeb245a8!2sGreen9%20Luxurious%20Homestay!5e1!3m2!1sen!2sin!4v1773730042423!5m2!1sen!2sin"
                             className="w-full h-87.5 md:h-full"
                             allowFullScreen
                             loading="lazy"

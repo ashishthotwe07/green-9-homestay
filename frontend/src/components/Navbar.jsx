@@ -46,27 +46,27 @@ export default function Navbar() {
                 {/* Desktop Menu */}
                 <div className="hidden md:flex items-center gap-10 font-medium text-gray-700">
 
-                    <button onClick={() => scrollToSection("home")} className="hover:text-green-700">
+                    <button onClick={() => scrollToSection("home")} className="hover:text-green-700 cursor-pointer">
                         Home
                     </button>
 
-                    <button onClick={() => scrollToSection("about")} className="hover:text-green-700">
+                    <button onClick={() => scrollToSection("about")} className="hover:text-green-700 cursor-pointer">
                         About Us
                     </button>
 
-                    <button onClick={() => scrollToSection("gallery")} className="hover:text-green-700">
+                    <button onClick={() => scrollToSection("gallery")} className="hover:text-green-700 cursor-pointer">
                         Gallery
                     </button>
 
-                    <button onClick={() => scrollToSection("amenities")} className="hover:text-green-700">
+                    <button onClick={() => scrollToSection("amenities")} className="hover:text-green-700 cursor-pointer">
                         Amenities
                     </button>
 
-                    <button onClick={() => scrollToSection("pricing")} className="hover:text-green-700">
+                    <button onClick={() => scrollToSection("pricing")} className="hover:text-green-700 cursor-pointer">
                         Tariff
                     </button>
 
-                    <button onClick={() => scrollToSection("location")} className="hover:text-green-700">
+                    <button onClick={() => scrollToSection("location")} className="hover:text-green-700 cursor-pointer">
                         Contact Us
                     </button>
 
